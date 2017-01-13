@@ -1,0 +1,16 @@
+2016-11-16 21:16:05,189 INFO sqlalchemy.engine.base.Engine SHOW VARIABLES LIKE 'sql_mode'
+2016-11-16 21:16:05,189 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,191 INFO sqlalchemy.engine.base.Engine SELECT DATABASE()
+2016-11-16 21:16:05,191 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,192 INFO sqlalchemy.engine.base.Engine show collation where `Charset` = 'utf8' and `Collation` = 'utf8_bin'
+2016-11-16 21:16:05,192 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,194 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2016-11-16 21:16:05,194 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,194 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2016-11-16 21:16:05,194 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,195 INFO sqlalchemy.engine.base.Engine SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8) COLLATE utf8_bin AS anon_1
+2016-11-16 21:16:05,195 INFO sqlalchemy.engine.base.Engine ()
+2016-11-16 21:16:05,196 INFO sqlalchemy.engine.base.Engine BEGIN (implicit)
+2016-11-16 21:16:05,197 INFO sqlalchemy.engine.base.Engine SELECT results.`ID` AS `results_ID`, results.pulse AS results_pulse, results.distance AS results_distance, results.eof AS results_eof, results.eof_center AS results_eof_center 
+FROM results
+2016-11-16 21:16:05,197 INFO sqlalchemy.engine.base.Engine ()

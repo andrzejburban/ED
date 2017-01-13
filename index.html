@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fiber Monitoring System</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./ryu.topology.css">
+    <link rel="stylesheet" href="./pure-min-0.5.0.css">
+    <link rel="stylesheet" href="./font-awesome.min.css">
+    <link rel="stylesheet" href="./pure-custom.css">
+    <link rel="stylesheet" href="./jquery-ui.css">
+    <link href="./bootstrap.min.css" rel="stylesheet" />
+    <link href="./bootstrap-theme.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="./jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./jquery-ui.js"></script>
+    <script type="text/javascript" src="./dygraph-combined.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <style type="text/css">
+        .annotation{
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div id="menu2">
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+            <img src="fca_logo.png" alt="" style="height:55px; width:180px; vertical-align:middle;">
+            <a class="pure-menu-heading" style="position: absolute" href="./alarmy.html">Fiber Monitoring System</a>
+            <a class="pure-menu-heading" style="position: absolute; right: 0;" id="clockbox"></a>
+        </div>
+    </div>
+</div>
+
+<div id="layout">
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <ul>
+                <li class=" menu-item-divided pure-menu-selected">
+                    <a href="./wyniki.html">Wyniki
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="main" >
+
+            <div class="Viewer-stats" >
+                <h2> </h2>
+                <table class="own-table" style="width: 100%">
+                    <tr>
+                        <td style="width: 40%;">
+                            <div id="obiekt_tabelka" style="overflow: auto;height: 60vh;">
+                                <table class="pure-table pure-table-bordered" style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th rowspan="1" style="text-align: center; width: auto">resultID</th>
+                                        <th rowspan="1" style="text-align: center; width: auto">Pulse</th>
+                                        <th rowspan="1" style="text-align: center; width: auto">distance</th>
+                                        <th rowspan="1" style="text-align: center; width: auto">EOF</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="wyniki-stats-data">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                        <td style="width: 60%;">
+                            <div id="chart" style="width: auto;height: 60vh;"></div>
+                        </td>
+                    </tr>
+                    <tr style="height: 0.5cm;">
+
+                    </tr>
+                    <tr>
+                        <td style="width: 40%">
+                        </td>
+                        <td style="width: 60%">
+                            <b style="color: #002B5E">Komentarz: </b>
+                            <input id="trace_comment" type="text" style="width: auto;">
+                            <input type="button" class="pure-button pure-button-primary" value="Aktualizuj" onclick="aktualizujTrace()" style="width: auto">
+                        </td>
+                    </tr>
+                    <tr style="height: 0.5cm">
+
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <b style="color: #002B5E">Akcje: </b>
+                            <input type="button" id="trace_lite" class="pure-button pure-button-primary" value="Szczegółowy wykres" style="width: auto">
+                            <input type="button" class="pure-button pure-button-primary" value="Usuń" onclick="usunTrace()" style="width: auto">
+                            <input type="button" class="pure-button pure-button-primary" value="CSV" onclick="exportToCSV()" style="width: auto">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+    </div><!-- main -->
+    <div style="text-align: center" id="footer">Copyright by FCA sp. z o.o. <a href="http://www.fca.com.pl/">www.fca.com.pl</a></div>
+</div><!--layout-->
+<script type="text/javascript" src="./wyniki.js"></script>
+</body>
+</html>

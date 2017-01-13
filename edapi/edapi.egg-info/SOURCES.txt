@@ -1,0 +1,12 @@
+README.rst
+setup.py
+edapi/__init__.py
+edapi/views.py
+edapi.egg-info/PKG-INFO
+edapi.egg-info/SOURCES.txt
+edapi.egg-info/dependency_links.txt
+edapi.egg-info/entry_points.txt
+edapi.egg-info/not-zip-safe
+edapi.egg-info/pbr.json
+edapi.egg-info/requires.txt
+edapi.egg-info/top_level.txt
