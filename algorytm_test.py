@@ -72,8 +72,16 @@ def algorytm_test(key):
     '''for i in range(0,len(y_axis),1):
         if(y_axis[i]>=srednia):
             y_axis[i]=srednia'''
+    current_max=np.max(y_axis)
+    end_line_indicator=0
+    for i in range(0,len(y_axis)):
+        if(y_axis[i]>=0.27*current_max):
+            end_line_indicator=x_axis[i]-3600
+            break
+
+    print("Koniec lini w: ",end_line_indicator)
     plt.plot(x_axis,y_axis)
     plt.show()
     return eof
 
-algorytm_test(3428)
+algorytm_test(3111)

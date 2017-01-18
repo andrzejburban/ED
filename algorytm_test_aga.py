@@ -39,8 +39,8 @@ def algorytm_test(key):
     jump=10
     new_y_axis=y_axis
     for i in range(0,len(y_axis),1):
-        if(y_axis[i]>=12000):
-            y_axis[i]=12000
+        if(y_axis[i]>=14000):
+            y_axis[i]=14000
     for i in range(0,len(y_axis),jump):
         if(i+jump<len(y_axis)):
             avg=np.var(y_axis[i:i+jump])
@@ -76,4 +76,4 @@ def algorytm_test(key):
     plt.show()
     return eof
 
-algorytm_test(3428)
+algorytm_test(4413)
