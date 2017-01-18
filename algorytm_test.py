@@ -46,42 +46,27 @@ def algorytm_test(key):
             avg=np.var(y_axis[i:i+jump])
             for j in range(i,i+jump):
                 y_axis[j]=avg
-            #a=(y_axis[i-1]-y_axis[i+jump])/(x_axis[i-1]-x_axis[i+jump])
-            #b=y_axis[i-1]-(a*x_axis[i-1])
-            #for j in range(i,i+jump):
-            #    y_axis[j]=(a*x_axis[j])+b
         else:
             avg=np.var(y_axis[i:len(y_axis)])
             for j in range(i,len(y_axis)):
                 y_axis[j]=avg
-            #a=(y_axis[i-1]-y_axis[len(y_axis)-1])/(x_axis[i-1]-x_axis[len(y_axis)-1])
-            #b=y_axis[i-1]-(a*x_axis[i-1])
-            #for j in range(i,len(y_axis)-1):
-             #   new_y_axis[j]=a*x_axis[j]+b2
     new_y_axis=np.unique(y_axis)
     srednia=np.mean(new_y_axis)
     mediana=np.median(new_y_axis)
-    print("mediana: ",mediana,"; srednia: ", srednia)
     for i in range(0,len(y_axis),1):
         if(y_axis[i]>=srednia):
             y_axis[i]=mediana
     new_y_axis=np.unique(y_axis)
-    srednia=np.mean(new_y_axis)
-    mediana=np.median(new_y_axis)
-    print("mediana: ",mediana,"; srednia: ", srednia)
-    '''for i in range(0,len(y_axis),1):
-        if(y_axis[i]>=srednia):
-            y_axis[i]=srednia'''
     current_max=np.max(y_axis)
-    end_line_indicator=0
     for i in range(0,len(y_axis)):
         if(y_axis[i]>=0.27*current_max):
-            end_line_indicator=x_axis[i]-3600
+            eof=x_axis[i]-3200
             break
-
-    print("Koniec lini w: ",end_line_indicator)
-    plt.plot(x_axis,y_axis)
-    plt.show()
+    if(eof<4000):
+        eof=4000
+    #plt.plot(x_axis,y_axis)
+    #plt.show()
     return eof
 
-algorytm_test(3111)
+eof=algorytm_test(4228)
+print("Koniec lini w: ",eof)
