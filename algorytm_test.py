@@ -48,7 +48,7 @@ def algorytm_test(key):
         if(y_axis[i]>=12000):
             y_axis[i]=12000
         elif(y_axis[i]<=noise_avg):#ten if jest opcjonalny i jeszcze nie do konca ustalony co do wartosci
-            y_axis[i]=noise_avg
+            pass#y_axis[i]=noise_avg
     for i in range(0,len(y_axis),jump):
         if(i+jump<len(y_axis)):
             avg=np.var(y_axis[i:i+jump])
@@ -76,5 +76,5 @@ def algorytm_test(key):
     #plt.show()
     return eof
 
-eof=algorytm_test(4183)
+eof=algorytm_test(4228)
 print("Koniec lini w: ",eof)
