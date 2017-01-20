@@ -38,9 +38,17 @@ def algorytm_test(key):
     session.close()
     jump=10
     new_y_axis=y_axis
+    noise_avg=9000
+    for i in xrange(0,len(y_axis)):
+        if(x_axis[i]>=104000):
+            noise_avg=np.mean(y_axis[i:len(y_axis)])-200
+            print("NOISE_AVG: ",noise_avg)
+            break
     for i in range(0,len(y_axis),1):
         if(y_axis[i]>=12000):
             y_axis[i]=12000
+        elif(y_axis[i]<=noise_avg):#ten if jest opcjonalny i jeszcze nie do konca ustalony co do wartosci
+            y_axis[i]=noise_avg
     for i in range(0,len(y_axis),jump):
         if(i+jump<len(y_axis)):
             avg=np.var(y_axis[i:i+jump])
@@ -68,5 +76,5 @@ def algorytm_test(key):
     #plt.show()
     return eof
 
-eof=algorytm_test(4228)
+eof=algorytm_test(4183)
 print("Koniec lini w: ",eof)
