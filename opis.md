@@ -64,7 +64,7 @@ Pomiar po obliczeniu wariancji:
 ![Original image](/ed_wariancja_high.png)
 
 Wariancja po usunięciu szpilek wariancji:
-![Original image(/ed_wariancja.png)
+![Original image](/ed_wariancja.png)
 
 Zwrócony wynik przez algorytm: 20095
 
