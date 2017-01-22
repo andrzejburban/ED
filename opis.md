@@ -41,7 +41,7 @@ Po wykonaniu tego zadania ostatecznie pozostało 126 pomiarów, które nadawały
 
 #### Analiza danych
 
-Proces analizy oczyszczonych danych został rozpoczęty od sprawdzenia jak zmieniają się niektóre statystyki i/lub wielkości dla różnych fragmentów reflektogramu. Były one badane średnią kroczącą, wariancją odcinkową, odcinkowym linearyzowaniem oraz obliczaniem współczynników autokorelacji. Ze wszystkich wymienionych metod(oraz ich różnych modyfikacji) jedynym, który wykazywał wysoką użyteczność do wykrywania końca linii w reflektogramie optycznym była wariancja odcinkowa. Szum występujący w reflektogramie poza badanym torem optycznym wykazywał się bardzo wysoką wartością wariancji w stosunku do reszty toru optycznego. Pozostałymi jeszcze miejscami o wysokiej wariancji były miejsca charakteryzujace sie występowaniem zjawisk optycznych(odbicia Fresnela). Jednak z analizy różnych reflektogramów zauważono że szum nie ma wartości powyżej 11 decybeli. Wynikło z tego iż początek szumu znajduje się zawsze poniżej wartości 12 decyle(właściwie najczęściej poniżej 10dB). Również poniżej tej wartości nigdy nie występują inne zjawiska optyczne o wysokiej wariancji. Dlatego dla celów algorytmu zdecydowaliśmy o wycięciu wartości większych od 12dB. Zostały one zamienione na wartość 12dB. Dzięki temu pierwszą wartością która miała wyraźnie niezerową wartość wariancji był początek szumu za torem optycznym. Zauważono również że zawsze na początku występowała bardzo wysoka szpilka wariancji, której należało się pozbyć. Była to szpilka wynikająca z istnienia na wykresie silnie opadającego zbocza strefy martwej reflektometru. Aby go wyeliminować zamieniono wartość wyszystkich punktów powyżej średniej wartości na wartość mediany. Cechą charakterystyczną reflektometru dla którego opracowywany jest algorytm jest szerokość strefy martwej, która wynosi 3,2 km. Wynika z tego iż znaleziony punkt, w początku wysokiej wariancji jest tak naprawdę oddalony od faktycznego punktu końca linii o 3,2 km. Również podczas testów zauważono iż nie należy uznawać pierwszego punktu o niezerowej wariancji jako punktu końca linii lecz dopiero punkt wykazujący się wartością wyraźnie wyższą od zera. Po przeglądnięciu wykresów wariancji dla wielu różnych przykładów uznano empirycznie iż dobrą wartością jest co najmniej ćwierć wartości maksymalnej wariancji na linii optycznej.
+Proces analizy oczyszczonych danych został rozpoczęty od sprawdzenia jak zmieniają się niektóre statystyki i/lub wielkości dla różnych fragmentów reflektogramu. Były one badane średnią kroczącą, wariancją odcinkową, odcinkowym linearyzowaniem oraz obliczaniem współczynników autokorelacji. Ze wszystkich wymienionych metod(oraz ich różnych modyfikacji) jedynym, który wykazywał wysoką użyteczność do wykrywania końca linii w reflektogramie optycznym była wariancja odcinkowa. Szum występujący w reflektogramie poza badanym torem optycznym wykazywał się bardzo wysoką wartością wariancji w stosunku do reszty toru optycznego. Pozostałymi jeszcze miejscami o wysokiej wariancji były miejsca charakteryzujace sie występowaniem zjawisk optycznych(odbicia Fresnela). Jednak z analizy różnych reflektogramów zauważono że szum nie ma wartości powyżej 12 decybeli. Wynikło z tego iż początek szumu znajduje się zawsze poniżej wartości 12 decyle(właściwie najczęściej poniżej 10dB). Również poniżej tej wartości nigdy nie występują inne zjawiska optyczne o wysokiej wariancji. Dlatego dla celów algorytmu zdecydowaliśmy o wycięciu wartości większych od 12dB. Zostały one zamienione na wartość 12dB. Dzięki temu pierwszą wartością która miała wyraźnie niezerową wartość wariancji był początek szumu za torem optycznym. Zauważono również że zawsze na początku występowała bardzo wysoka szpilka wariancji, której należało się pozbyć. Była to szpilka wynikająca z istnienia na wykresie silnie opadającego zbocza strefy martwej reflektometru. Aby go wyeliminować zamieniono wartość wyszystkich punktów powyżej średniej wartości na wartość mediany. Cechą charakterystyczną reflektometru dla którego opracowywany jest algorytm jest szerokość strefy martwej, która wynosi 3,2 km. Wynika z tego iż znaleziony punkt, w początku wysokiej wariancji jest tak naprawdę oddalony od faktycznego punktu końca linii o 3,2 km. Również podczas testów zauważono iż nie należy uznawać pierwszego punktu o niezerowej wariancji jako punktu końca linii lecz dopiero punkt wykazujący się wartością wyraźnie wyższą od zera. Po przeglądnięciu wykresów wariancji dla wielu różnych przykładów uznano empirycznie iż dobrą wartością jest co najmniej ćwierć wartości maksymalnej wariancji na linii optycznej.
 Z przeprowadzonej analizy utworzony został następujący algorytm detekcji końca linii:
 - Wartości >12dB zamień na wartość 12dB
 - Obliczyć wariancję dla odcinków szerokości 10 próbek i zamienić wartość tych próbek na wartość obliczonej wariancji
@@ -52,7 +52,22 @@ Z przeprowadzonej analizy utworzony został następujący algorytm detekcji koń
 
 Poniżej przedstawiony zostanie krok po kroku przebieg algorytmu dla przykładowego pomiaru.
 
+Jest to pomiar dla którego koniec linii optycznej znajduje się w punkcie 21090 metrów.
+Oryginalny wygląd pomiaru:
+![Original image](/images/ed_original.png)
+Format: ![Alt Text](url)
+Pomiar po usunięciu wartośći >12dB:
+![Original image](/images/ed_12db.png)
+Format: ![Alt Text](url)
+Pomiar po obliczeniu wariancji:
+![Original image](/images/ed_wariancja_high.png)
+Format: ![Alt Text](url)
+Wariancja po usunięciu szpilek wariancji:
+![Original image](/images/ed_wariancja.png)
+Format: ![Alt Text](url)
 
+Zwrócony wynik przez algorytm: 20095
+Różnica między wynikiem zwróconym a faktycznym końcem linii jest mniejsza niż 1200 więc wynik jest poprawny.
 
 Stworzony algorytm został następnie poddany testom w celu sprawdzenia go na różnych zestawach próbek.
 
