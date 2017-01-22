@@ -55,16 +55,15 @@ Poniżej przedstawiony zostanie krok po kroku przebieg algorytmu dla przykładow
 Jest to pomiar dla którego koniec linii optycznej znajduje się w punkcie 21090 metrów.
 Oryginalny wygląd pomiaru:
 ![Original image](/images/ed_original.png)
-Format: ![Alt Text](url)
+
 Pomiar po usunięciu wartośći >12dB:
 ![Original image](/images/ed_12db.png)
-Format: ![Alt Text](url)
+
 Pomiar po obliczeniu wariancji:
 ![Original image](/images/ed_wariancja_high.png)
-Format: ![Alt Text](url)
+
 Wariancja po usunięciu szpilek wariancji:
 ![Original image](/images/ed_wariancja.png)
-Format: ![Alt Text](url)
 
 Zwrócony wynik przez algorytm: 20095
 Różnica między wynikiem zwróconym a faktycznym końcem linii jest mniejsza niż 1200 więc wynik jest poprawny.
