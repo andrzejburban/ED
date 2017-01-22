@@ -58,13 +58,13 @@ Oryginalny wygląd pomiaru:
 ![Original image](/ed_original.png)
 
 Pomiar po usunięciu wartośći >12dB:
-![Original image](/ed_12db.png)
+![Original image2](/ed_12db.png)
 
 Pomiar po obliczeniu wariancji:
-![Original image](/ed_wariancja_high.png)
+![Original image3](/ed_wariancja_high.png)
 
 Wariancja po usunięciu szpilek wariancji:
-![Original image](/ed_wariancja.png)
+![Original image4](/ed_wariancja.png)
 
 Zwrócony wynik przez algorytm: 20095
 
