@@ -53,19 +53,21 @@ Z przeprowadzonej analizy utworzony został następujący algorytm detekcji koń
 Poniżej przedstawiony zostanie krok po kroku przebieg algorytmu dla przykładowego pomiaru.
 
 Jest to pomiar dla którego koniec linii optycznej znajduje się w punkcie 21090 metrów.
+
 Oryginalny wygląd pomiaru:
-![Image of original](/ed_original.png)
+![Original image](/ed_original.png)
 
 Pomiar po usunięciu wartośći >12dB:
-![Image of 12db](/ed_12db.png)
+![Original image](/ed_12db.png)
 
 Pomiar po obliczeniu wariancji:
-![Image of variance high](/ed_wariancja_high.png)
+![Original image](/ed_wariancja_high.png)
 
 Wariancja po usunięciu szpilek wariancji:
-![Image of variance](/ed_wariancja.png)
+![Original image(/ed_wariancja.png)
 
 Zwrócony wynik przez algorytm: 20095
+
 Różnica między wynikiem zwróconym a faktycznym końcem linii jest mniejsza niż 1200 więc wynik jest poprawny.
 
 Stworzony algorytm został następnie poddany testom w celu sprawdzenia go na różnych zestawach próbek.
