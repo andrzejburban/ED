@@ -58,7 +58,7 @@ Oryginalny wygląd pomiaru:
 ![Original image](/ed_original.png)
 
 Pomiar po usunięciu wartośći >12dB:
-![Original image2](/ed_12db.png)
+![Original image2](/en_12db.png)
 
 Pomiar po obliczeniu wariancji:
 ![Original image3](/ed_wariancja_high.png)
